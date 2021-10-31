@@ -4,6 +4,7 @@ import com.krawart.hexademo.core.staff.application.command.AddVetCommand;
 import com.krawart.hexademo.core.staff.application.command.UpdateVetCommand;
 import com.krawart.hexademo.core.staff.domain.Vet;
 import com.krawart.hexademo.core.staff.domain.VetRepository;
+import com.krawart.hexademo.shared.domain.value.Email;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,7 +23,7 @@ public class VetManager {
         Vet.builder()
             .firstName(command.firstName())
             .lastName(command.lastName())
-            .email(command.email())
+            .email(new Email(command.email()))
             .telephone(command.telephone())
             .build()
     );
@@ -33,7 +34,7 @@ public class VetManager {
 
     persistedEntity.setFirstName(command.firstName());
     persistedEntity.setLastName(command.lastName());
-    persistedEntity.setEmail(command.email());
+    persistedEntity.setEmail(new Email(command.email()));
     persistedEntity.setTelephone(command.telephone());
 
     return persistedEntity;

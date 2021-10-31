@@ -17,7 +17,7 @@ public record VetDTO(
         entity.getId().toString(),
         entity.getFirstName(),
         entity.getLastName(),
-        entity.getEmail(),
+        entity.getEmail().email(),
         entity.getTelephone()
     );
   }

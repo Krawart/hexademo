@@ -18,7 +18,7 @@ public record OwnerDTO(
         entity.getId().toString(),
         entity.getFirstName(),
         entity.getLastName(),
-        entity.getEmail(),
+        entity.getEmail().email(),
         entity.getAddress(),
         entity.getCity(),
         entity.getTelephone()
@@ -36,7 +36,7 @@ public record OwnerDTO(
           entity.getId().toString(),
           entity.getFirstName(),
           entity.getLastName(),
-          entity.getEmail()
+          entity.getEmail().email()
       );
     }
   }

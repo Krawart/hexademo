@@ -1,6 +1,7 @@
 package com.krawart.hexademo.core.patient.domain;
 
 import com.krawart.hexademo.shared.domain.AggregateRoot;
+import com.krawart.hexademo.shared.domain.value.Email;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -23,7 +24,7 @@ public class Owner extends AggregateRoot {
   private String lastName;
 
   @Column(name = "email")
-  private String email;
+  private Email email;
 
   @Column(name = "address")
   private String address;
