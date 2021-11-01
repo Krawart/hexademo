@@ -1,4 +1,4 @@
-package com.krawart.hexademo.shared.infrastructure;
+package com.krawart.hexademo.shared.infrastructure.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;

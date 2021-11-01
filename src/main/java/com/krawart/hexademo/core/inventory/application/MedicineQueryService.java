@@ -1,5 +1,6 @@
 package com.krawart.hexademo.core.inventory.application;
 
+import com.krawart.hexademo.common.application.ApplicationService;
 import com.krawart.hexademo.core.inventory.domain.Medicine;
 import com.krawart.hexademo.core.inventory.domain.MedicineRepository;
 import lombok.RequiredArgsConstructor;
@@ -9,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.UUID;
 
 @Service
+@ApplicationService
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class MedicineQueryService {

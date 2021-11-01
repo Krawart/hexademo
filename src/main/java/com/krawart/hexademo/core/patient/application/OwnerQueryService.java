@@ -1,14 +1,14 @@
 package com.krawart.hexademo.core.patient.application;
 
+import com.krawart.hexademo.common.application.ApplicationService;
 import com.krawart.hexademo.core.patient.domain.Owner;
 import com.krawart.hexademo.core.patient.domain.OwnerRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
-@Service
+@ApplicationService
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class OwnerQueryService {

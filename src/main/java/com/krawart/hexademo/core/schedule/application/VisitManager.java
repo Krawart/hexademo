@@ -1,18 +1,18 @@
 package com.krawart.hexademo.core.schedule.application;
 
+import com.krawart.hexademo.common.application.ApplicationService;
 import com.krawart.hexademo.core.patient.domain.PetRepository;
 import com.krawart.hexademo.core.schedule.application.command.AddVisitCommand;
 import com.krawart.hexademo.core.schedule.application.command.UpdateVisitCommand;
 import com.krawart.hexademo.core.schedule.domain.Visit;
 import com.krawart.hexademo.core.schedule.domain.VisitRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.UUID;
 
-@Service
+@ApplicationService
 @Transactional
 @RequiredArgsConstructor
 public class VisitManager {

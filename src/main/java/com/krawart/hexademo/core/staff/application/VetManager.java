@@ -1,18 +1,18 @@
 package com.krawart.hexademo.core.staff.application;
 
+import com.krawart.hexademo.common.application.ApplicationService;
 import com.krawart.hexademo.core.staff.application.command.AddVetCommand;
 import com.krawart.hexademo.core.staff.application.command.UpdateVetCommand;
 import com.krawart.hexademo.core.staff.domain.Vet;
 import com.krawart.hexademo.core.staff.domain.VetRepository;
 import com.krawart.hexademo.shared.domain.value.Email;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.UUID;
 
-@Service
+@ApplicationService
 @Transactional
 @RequiredArgsConstructor
 public class VetManager {

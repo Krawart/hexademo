@@ -1,18 +1,18 @@
 package com.krawart.hexademo.core.patient.application;
 
+import com.krawart.hexademo.common.application.ApplicationService;
 import com.krawart.hexademo.core.patient.application.command.AddOwnerCommand;
 import com.krawart.hexademo.core.patient.application.command.UpdateOwnerCommand;
 import com.krawart.hexademo.core.patient.domain.Owner;
 import com.krawart.hexademo.core.patient.domain.OwnerRepository;
 import com.krawart.hexademo.shared.domain.value.Email;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.UUID;
 
-@Service
+@ApplicationService
 @Transactional
 @RequiredArgsConstructor
 public class OwnerManager {

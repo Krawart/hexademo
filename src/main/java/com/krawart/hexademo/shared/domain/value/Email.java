@@ -1,10 +1,12 @@
 package com.krawart.hexademo.shared.domain.value;
 
+import com.krawart.hexademo.common.domain.ValueObject;
 import org.springframework.util.Assert;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@ValueObject
 public record Email(String email) {
   public Email {
     Assert.notNull(email, "Email cannot be undefined");

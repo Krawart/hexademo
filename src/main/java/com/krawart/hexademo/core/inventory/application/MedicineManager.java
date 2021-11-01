@@ -1,16 +1,16 @@
 package com.krawart.hexademo.core.inventory.application;
 
+import com.krawart.hexademo.common.application.ApplicationService;
 import com.krawart.hexademo.core.inventory.application.command.AddMedicineCommand;
 import com.krawart.hexademo.core.inventory.application.command.UpdateMedicineCommand;
 import com.krawart.hexademo.core.inventory.domain.Medicine;
 import com.krawart.hexademo.core.inventory.domain.MedicineRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
-@Service
+@ApplicationService
 @Transactional
 @RequiredArgsConstructor
 public class MedicineManager {

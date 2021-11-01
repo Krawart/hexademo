@@ -1,18 +1,18 @@
 package com.krawart.hexademo.core.patient.application;
 
+import com.krawart.hexademo.common.application.ApplicationService;
 import com.krawart.hexademo.core.patient.application.command.AddPetCommand;
 import com.krawart.hexademo.core.patient.application.command.UpdatePetCommand;
 import com.krawart.hexademo.core.patient.domain.OwnerRepository;
 import com.krawart.hexademo.core.patient.domain.Pet;
 import com.krawart.hexademo.core.patient.domain.PetRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.UUID;
 
-@Service
+@ApplicationService
 @Transactional
 @RequiredArgsConstructor
 public class PetManager {

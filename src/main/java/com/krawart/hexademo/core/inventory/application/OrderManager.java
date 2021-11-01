@@ -1,12 +1,12 @@
 package com.krawart.hexademo.core.inventory.application;
 
+import com.krawart.hexademo.common.application.ApplicationService;
 import com.krawart.hexademo.core.inventory.application.command.AddOrderCommand;
 import com.krawart.hexademo.core.inventory.application.command.UpdateOrderCommand;
 import com.krawart.hexademo.core.inventory.domain.MedicineRepository;
 import com.krawart.hexademo.core.inventory.domain.Order;
 import com.krawart.hexademo.core.inventory.domain.OrderRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
@@ -14,7 +14,7 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-@Service
+@ApplicationService
 @Transactional
 @RequiredArgsConstructor
 public class OrderManager {
