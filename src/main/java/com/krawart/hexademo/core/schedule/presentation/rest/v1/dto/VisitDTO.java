@@ -1,6 +1,6 @@
-package com.krawart.hexademo.core.schedule.application.dto;
+package com.krawart.hexademo.core.schedule.presentation.rest.v1.dto;
 
-import com.krawart.hexademo.core.patient.application.dto.PetDTO.PetShortDTO;
+import com.krawart.hexademo.core.patient.presentation.rest.v1.dto.PetDTO.PetShortDTO;
 import com.krawart.hexademo.core.schedule.domain.Visit;
 import lombok.Builder;
 

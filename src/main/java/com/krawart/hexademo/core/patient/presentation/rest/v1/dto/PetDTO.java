@@ -1,8 +1,8 @@
-package com.krawart.hexademo.core.patient.application.dto;
+package com.krawart.hexademo.core.patient.presentation.rest.v1.dto;
 
-import com.krawart.hexademo.core.patient.application.dto.OwnerDTO.OwnerShortDTO;
+import com.krawart.hexademo.core.patient.presentation.rest.v1.dto.OwnerDTO.OwnerShortDTO;
 import com.krawart.hexademo.core.patient.domain.Pet;
-import com.krawart.hexademo.core.schedule.application.dto.VisitDTO.VisitShortDTO;
+import com.krawart.hexademo.core.schedule.presentation.rest.v1.dto.VisitDTO.VisitShortDTO;
 import lombok.Builder;
 
 import java.time.Instant;

@@ -1,4 +1,4 @@
-package com.krawart.hexademo.core.patient.application.dto;
+package com.krawart.hexademo.core.patient.presentation.rest.v1.dto;
 
 import com.krawart.hexademo.core.patient.domain.Owner;
 import lombok.Builder;

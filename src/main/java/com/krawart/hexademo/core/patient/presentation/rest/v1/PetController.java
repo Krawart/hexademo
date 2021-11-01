@@ -4,7 +4,7 @@ import com.krawart.hexademo.core.patient.application.PetManager;
 import com.krawart.hexademo.core.patient.application.PetQueryService;
 import com.krawart.hexademo.core.patient.application.command.AddPetCommand;
 import com.krawart.hexademo.core.patient.application.command.UpdatePetCommand;
-import com.krawart.hexademo.core.patient.application.dto.PetDTO;
+import com.krawart.hexademo.core.patient.presentation.rest.v1.dto.PetDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

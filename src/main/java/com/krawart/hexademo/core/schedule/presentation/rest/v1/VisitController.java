@@ -4,7 +4,7 @@ import com.krawart.hexademo.core.schedule.application.VisitManager;
 import com.krawart.hexademo.core.schedule.application.VisitQueryService;
 import com.krawart.hexademo.core.schedule.application.command.AddVisitCommand;
 import com.krawart.hexademo.core.schedule.application.command.UpdateVisitCommand;
-import com.krawart.hexademo.core.schedule.application.dto.VisitDTO;
+import com.krawart.hexademo.core.schedule.presentation.rest.v1.dto.VisitDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

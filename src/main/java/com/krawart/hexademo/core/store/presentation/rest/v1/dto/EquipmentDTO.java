@@ -1,4 +1,4 @@
-package com.krawart.hexademo.core.store.application.dto;
+package com.krawart.hexademo.core.store.presentation.rest.v1.dto;
 
 import com.krawart.hexademo.core.store.domain.Equipment;
 import lombok.Builder;

@@ -4,7 +4,7 @@ import com.krawart.hexademo.core.store.application.EquipmentManager;
 import com.krawart.hexademo.core.store.application.EquipmentQueryService;
 import com.krawart.hexademo.core.store.application.command.AddEquipmentCommand;
 import com.krawart.hexademo.core.store.application.command.UpdateEquipmentCommand;
-import com.krawart.hexademo.core.store.application.dto.EquipmentDTO;
+import com.krawart.hexademo.core.store.presentation.rest.v1.dto.EquipmentDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

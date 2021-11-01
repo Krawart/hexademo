@@ -1,4 +1,4 @@
-package com.krawart.hexademo.core.staff.application.dto;
+package com.krawart.hexademo.core.staff.presentation.rest.v1.dto;
 
 import com.krawart.hexademo.core.staff.domain.Vet;
 import lombok.Builder;

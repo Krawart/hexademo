@@ -1,6 +1,6 @@
-package com.krawart.hexademo.core.store.application.dto;
+package com.krawart.hexademo.core.store.presentation.rest.v1.dto;
 
-import com.krawart.hexademo.core.store.application.dto.MedicineDTO.MedicineShortDTO;
+import com.krawart.hexademo.core.store.presentation.rest.v1.dto.MedicineDTO.MedicineShortDTO;
 import com.krawart.hexademo.core.store.domain.Order;
 import com.krawart.hexademo.core.store.domain.Order.OrderItem;
 import lombok.Builder;

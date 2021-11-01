@@ -4,7 +4,7 @@ import com.krawart.hexademo.core.patient.application.OwnerManager;
 import com.krawart.hexademo.core.patient.application.OwnerQueryService;
 import com.krawart.hexademo.core.patient.application.command.AddOwnerCommand;
 import com.krawart.hexademo.core.patient.application.command.UpdateOwnerCommand;
-import com.krawart.hexademo.core.patient.application.dto.OwnerDTO;
+import com.krawart.hexademo.core.patient.presentation.rest.v1.dto.OwnerDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
