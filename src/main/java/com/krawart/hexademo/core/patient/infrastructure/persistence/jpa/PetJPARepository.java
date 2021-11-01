@@ -36,7 +36,7 @@ class PetJPARepository implements PetRepository {
   }
 
   @Override
-  public void deleteById(UUID id) {
+  public void removeById(UUID id) {
     petDAO.deleteById(id);
   }
 }

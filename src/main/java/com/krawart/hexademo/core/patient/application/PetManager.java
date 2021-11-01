@@ -40,6 +40,6 @@ public class PetManager {
   }
 
   public void deleteById(UUID id) {
-    petRepository.deleteById(id);
+    petRepository.removeById(id);
   }
 }

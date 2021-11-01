@@ -36,7 +36,7 @@ class OwnerJPARepository implements OwnerRepository {
   }
 
   @Override
-  public void deleteById(UUID id) {
+  public void removeById(UUID id) {
     ownerDAO.deleteById(id);
   }
 }

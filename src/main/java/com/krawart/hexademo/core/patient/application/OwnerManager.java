@@ -39,6 +39,6 @@ public class OwnerManager {
   }
 
   public void deleteById(UUID id) {
-    ownerRepository.deleteById(id);
+    ownerRepository.removeById(id);
   }
 }

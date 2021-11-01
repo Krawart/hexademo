@@ -40,6 +40,6 @@ public class VisitManager {
   }
 
   public void deleteById(UUID id) {
-    visitRepository.deleteById(id);
+    visitRepository.removeById(id);
   }
 }

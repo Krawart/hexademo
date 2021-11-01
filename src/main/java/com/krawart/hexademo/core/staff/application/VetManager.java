@@ -9,7 +9,6 @@ import com.krawart.hexademo.shared.domain.value.Email;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.UUID;
 
 @ApplicationService
@@ -30,9 +29,12 @@ public class VetManager {
   }
 
   public Vet update(UpdateVetCommand command, UUID id) {
-    var persistedEntity = vetRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Vet not found"));
+    var persistedEntity = vetRepository.getById(id);
 
-    persistedEntity.setFirstName(command.firstName());
+    var firstCharValue = (int) command.firstName().charAt(0);
+    if (64 < firstCharValue && firstCharValue < 91) {
+      persistedEntity.setFirstName(command.firstName());
+    }
     persistedEntity.setLastName(command.lastName());
     persistedEntity.setEmail(new Email(command.email()));
     persistedEntity.setTelephone(command.telephone());
@@ -41,6 +43,6 @@ public class VetManager {
   }
 
   public void deleteById(UUID id) {
-    vetRepository.deleteById(id);
+    vetRepository.removeById(id);
   }
 }

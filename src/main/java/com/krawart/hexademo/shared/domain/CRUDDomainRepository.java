@@ -15,5 +15,5 @@ public interface CRUDDomainRepository<T extends Entity<?>> extends DomainObject 
 
   T getById(UUID id);
 
-  void deleteById(UUID id);
+  void removeById(UUID id);
 }

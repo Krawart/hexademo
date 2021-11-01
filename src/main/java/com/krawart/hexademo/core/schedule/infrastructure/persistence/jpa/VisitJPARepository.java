@@ -36,7 +36,7 @@ class VisitJPARepository implements VisitRepository {
   }
 
   @Override
-  public void deleteById(UUID id) {
+  public void removeById(UUID id) {
     visitDAO.deleteById(id);
   }
 }

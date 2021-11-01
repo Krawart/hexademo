@@ -36,7 +36,7 @@ public class VetJPARepository implements VetRepository {
   }
 
   @Override
-  public void deleteById(UUID id) {
+  public void removeById(UUID id) {
     vetDAO.deleteById(id);
   }
 }
