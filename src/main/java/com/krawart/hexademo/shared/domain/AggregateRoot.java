@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.Column;
@@ -31,8 +32,8 @@ public abstract class AggregateRoot extends BaseEntity {
   @JsonIgnore
   private Instant createdDate;
 
-  @LastModifiedBy
-  @Column(name = "last_modified_by", length = 50)
+  @LastModifiedDate
+  @Column(name = "last_modified_date")
   @JsonIgnore
-  private String lastModifiedBy;
+  private Instant lastModifiedDate;
 }

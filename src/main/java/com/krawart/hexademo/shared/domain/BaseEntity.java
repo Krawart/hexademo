@@ -10,11 +10,11 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.io.Serial;
+import java.io.Serializable;
 import java.util.UUID;
 
 /**
- * Base abstract class for entities which will hold definitions for created, last modified by and created,
- * last modified by date.
+ * Base abstract class for entities in core
  */
 @MappedSuperclass
 @Getter
@@ -22,7 +22,7 @@ import java.util.UUID;
 @SuperBuilder
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
-public abstract class BaseEntity implements Entity<UUID> {
+public abstract class BaseEntity implements Entity<UUID>, Serializable {
 
   @Serial
   private static final long serialVersionUID = 1L;
