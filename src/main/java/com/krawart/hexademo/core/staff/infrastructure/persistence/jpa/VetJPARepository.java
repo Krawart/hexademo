@@ -2,7 +2,6 @@ package com.krawart.hexademo.core.staff.infrastructure.persistence.jpa;
 
 import com.krawart.hexademo.core.staff.domain.Vet;
 import com.krawart.hexademo.core.staff.domain.VetRepository;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -11,28 +10,23 @@ import java.util.UUID;
 
 @Repository
 @RequiredArgsConstructor
-public class VetJPARepository implements VetRepository {
+class VetJPARepository implements VetRepository {
 
     private final VetDAO vetDAO;
 
     @Override
     public Vet add(Vet entity) {
-        return vetDAO.save(entity);
+        return vetDAO.save(VetEntity.of(entity)).toDomain();
     }
 
     @Override
     public Vet update(Vet entity) {
-        return vetDAO.save(entity);
+        return vetDAO.save(VetEntity.of(entity)).toDomain();
     }
 
     @Override
     public Optional<Vet> findById(UUID id) {
-        return vetDAO.findById(id);
-    }
-
-    @Override
-    public Vet getById(UUID id) {
-        return vetDAO.findById(id).orElseThrow(() -> new EntityNotFoundException("Vet not found in database"));
+        return vetDAO.findById(id).map(VetEntity::toDomain);
     }
 
     @Override

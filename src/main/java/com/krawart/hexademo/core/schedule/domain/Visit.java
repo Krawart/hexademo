@@ -1,31 +1,36 @@
 package com.krawart.hexademo.core.schedule.domain;
 
-import com.krawart.hexademo.core.patient.domain.Pet;
-import com.krawart.hexademo.shared.domain.AggregateRoot;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import lombok.*;
+import com.krawart.hexademo.common.domain.Entity;
+import lombok.Getter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 import java.time.Instant;
+import java.util.UUID;
 
-@Entity
+import static java.util.Objects.requireNonNull;
+
 @SuperBuilder
 @Getter
-@Setter
 @ToString
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Visit extends AggregateRoot {
+public class Visit extends Entity<UUID> {
 
-    @Column(name = "date")
     private Instant date;
 
-    @Column(name = "description")
     private String description;
 
-    @ManyToOne
-    @ToString.Exclude
-    private Pet pet;
+    private UUID petId;
+
+    public void setDate(Instant date) {
+        requireNonNull(date, "Date cannot be null");
+        if (date.isBefore(Instant.now())) {
+            throw new IllegalArgumentException("Date cannot be in the past");
+        }
+        this.date = date;
+    }
+
+    public void setDescription(String description) {
+        requireNonNull(description, "Description cannot be null");
+        this.description = description;
+    }
 }

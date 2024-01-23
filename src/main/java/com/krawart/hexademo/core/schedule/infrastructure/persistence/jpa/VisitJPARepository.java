@@ -2,7 +2,6 @@ package com.krawart.hexademo.core.schedule.infrastructure.persistence.jpa;
 
 import com.krawart.hexademo.core.schedule.domain.Visit;
 import com.krawart.hexademo.core.schedule.domain.VisitRepository;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -17,22 +16,17 @@ class VisitJPARepository implements VisitRepository {
 
     @Override
     public Visit add(Visit entity) {
-        return visitDAO.save(entity);
+        return visitDAO.save(VisitEntity.of(entity)).toDomain();
     }
 
     @Override
     public Visit update(Visit entity) {
-        return visitDAO.save(entity);
+        return visitDAO.save(VisitEntity.of(entity)).toDomain();
     }
 
     @Override
     public Optional<Visit> findById(UUID id) {
-        return visitDAO.findById(id);
-    }
-
-    @Override
-    public Visit getById(UUID id) {
-        return visitDAO.findById(id).orElseThrow(() -> new EntityNotFoundException("Visit not found in database"));
+        return visitDAO.findById(id).map(VisitEntity::toDomain);
     }
 
     @Override

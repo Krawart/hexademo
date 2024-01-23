@@ -1,8 +1,7 @@
 package com.krawart.hexademo.core.patient.infrastructure.persistence.jpa;
 
-import com.krawart.hexademo.core.patient.domain.Pet;
-import com.krawart.hexademo.shared.infrastructure.persistence.HexaDemoJpaRepository;
+import com.krawart.hexademo.shared.infrastructure.persistence.jpa.SpringDataJpaDAO;
 import org.springframework.stereotype.Component;
 
 @Component
-interface PetDAO extends HexaDemoJpaRepository<Pet> {}
+interface PetDAO extends SpringDataJpaDAO<PetEntity> {}

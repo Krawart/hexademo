@@ -17,7 +17,7 @@ public record OwnerDTO(
                 entity.getTelephone());
     }
 
-    public static record OwnerShortDTO(String id, String firstName, String lastName, String email) {
+    public record OwnerShortDTO(String id, String firstName, String lastName, String email) {
         public static OwnerShortDTO of(Owner entity) {
             return new OwnerShortDTO(
                     entity.getId().toString(),

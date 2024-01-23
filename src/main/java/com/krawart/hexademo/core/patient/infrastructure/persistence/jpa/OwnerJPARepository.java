@@ -2,7 +2,6 @@ package com.krawart.hexademo.core.patient.infrastructure.persistence.jpa;
 
 import com.krawart.hexademo.core.patient.domain.Owner;
 import com.krawart.hexademo.core.patient.domain.OwnerRepository;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -17,22 +16,17 @@ class OwnerJPARepository implements OwnerRepository {
 
     @Override
     public Owner add(Owner entity) {
-        return ownerDAO.save(entity);
+        return ownerDAO.save(OwnerEntity.of(entity)).toDomain();
     }
 
     @Override
     public Owner update(Owner entity) {
-        return ownerDAO.save(entity);
+        return ownerDAO.save(OwnerEntity.of(entity)).toDomain();
     }
 
     @Override
     public Optional<Owner> findById(UUID id) {
-        return ownerDAO.findById(id);
-    }
-
-    @Override
-    public Owner getById(UUID id) {
-        return ownerDAO.findById(id).orElseThrow(() -> new EntityNotFoundException("Owner not found in database"));
+        return ownerDAO.findById(id).map(OwnerEntity::toDomain);
     }
 
     @Override

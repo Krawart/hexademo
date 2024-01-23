@@ -1,30 +1,45 @@
 package com.krawart.hexademo.core.staff.domain;
 
-import com.krawart.hexademo.shared.domain.AggregateRoot;
+import com.krawart.hexademo.common.domain.Entity;
 import com.krawart.hexademo.shared.domain.value.Email;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import lombok.*;
+import lombok.Getter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-@Entity
+import java.util.UUID;
+
+import static java.util.Objects.requireNonNull;
+
 @SuperBuilder
 @Getter
-@Setter
 @ToString
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Vet extends AggregateRoot {
+public class Vet extends Entity<UUID> {
 
-    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "email")
     private Email email;
 
-    @Column(name = "telephone")
     private String telephone;
+
+    public void setFirstName(String firstName) {
+        requireNonNull(firstName, "First name cannot be null");
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        requireNonNull(lastName, "Last name cannot be null");
+        this.lastName = lastName;
+    }
+
+    public void setEmail(Email email) {
+        requireNonNull(email, "Email cannot be null");
+        this.email = email;
+    }
+
+    public void setTelephone(String telephone) {
+        requireNonNull(telephone, "Telephone cannot be null");
+        this.telephone = telephone;
+    }
 }

@@ -1,41 +1,50 @@
 package com.krawart.hexademo.core.patient.domain;
 
-import com.krawart.hexademo.shared.domain.AggregateRoot;
+import com.krawart.hexademo.common.domain.Entity;
 import com.krawart.hexademo.shared.domain.value.Email;
-import jakarta.persistence.*;
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
+import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
-@Entity
+import static java.util.Objects.requireNonNull;
+
 @SuperBuilder
 @Getter
-@Setter
 @ToString
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Owner extends AggregateRoot {
+public class Owner extends Entity<UUID> {
 
-    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "email")
     private Email email;
 
-    @Column(name = "address")
     private String address;
 
-    @Column(name = "city")
     private String city;
 
-    @Column(name = "telephone")
     private String telephone;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner", fetch = FetchType.EAGER)
-    @ToString.Exclude
-    private Set<Pet> pets;
+    @Builder.Default
+    private Set<Pet> pets = new HashSet<>();
+
+    public void setFirstName(String firstName) {
+        requireNonNull(firstName, "First name cannot be null");
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        requireNonNull(lastName, "Last name cannot be null");
+        this.lastName = lastName;
+    }
+
+    public void setEmail(Email email) {
+        requireNonNull(email, "Email cannot be null");
+        this.email = email;
+    }
 }

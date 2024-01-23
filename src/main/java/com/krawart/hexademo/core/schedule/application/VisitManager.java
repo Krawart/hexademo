@@ -20,10 +20,13 @@ public class VisitManager {
     private final PetRepository petRepository;
 
     public Visit add(AddVisitCommand command) {
+        if (!petRepository.existsById(command.petId())) {
+            throw new EntityNotFoundException("Pet not found");
+        }
         return visitRepository.add(Visit.builder()
                 .date(command.date())
                 .description(command.description())
-                .pet(petRepository.getById(UUID.fromString(command.petId())))
+                .petId((command.petId()))
                 .build());
     }
 
@@ -33,7 +36,6 @@ public class VisitManager {
 
         persistedEntity.setDate(command.date());
         persistedEntity.setDescription(command.description());
-        persistedEntity.setPet(petRepository.getById(UUID.fromString(command.petId())));
 
         return persistedEntity;
     }

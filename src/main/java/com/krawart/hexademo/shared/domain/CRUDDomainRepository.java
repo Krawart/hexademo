@@ -13,7 +13,9 @@ public interface CRUDDomainRepository<T extends Entity<?>> extends DomainObject 
 
     Optional<T> findById(UUID id);
 
-    T getById(UUID id);
+    default T getById(UUID id) {
+        return findById(id).orElseThrow(() -> new RuntimeException("Entity not found"));
+    }
 
     void removeById(UUID id);
 }

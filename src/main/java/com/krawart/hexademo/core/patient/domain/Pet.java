@@ -1,36 +1,38 @@
 package com.krawart.hexademo.core.patient.domain;
 
-import com.krawart.hexademo.core.schedule.domain.Visit;
-import com.krawart.hexademo.shared.domain.AggregateRoot;
-import jakarta.persistence.*;
-import lombok.*;
+import com.krawart.hexademo.common.domain.Entity;
+import lombok.Getter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 import java.time.Instant;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.UUID;
 
-@Entity
+import static java.util.Objects.requireNonNull;
+
 @SuperBuilder
 @Getter
-@Setter
 @ToString
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Pet extends AggregateRoot {
+public class Pet extends Entity<UUID> {
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "birth_date")
     private Instant birthDate;
 
-    @ManyToOne
-    @JoinColumn(name = "owner_id")
     private Owner owner;
 
-    @Transient
-    @ToString.Exclude
-    @Builder.Default
-    private Set<Visit> visits = new LinkedHashSet<>();
+    public void setName(String name) {
+        requireNonNull(name, "Name cannot be null");
+        this.name = name;
+    }
+
+    public void setBirthDate(Instant birthDate) {
+        requireNonNull(birthDate, "Birth date cannot be null");
+        this.birthDate = birthDate;
+    }
+
+    public void setOwner(Owner owner) {
+        requireNonNull(owner, "Owner cannot be null");
+        this.owner = owner;
+    }
 }
