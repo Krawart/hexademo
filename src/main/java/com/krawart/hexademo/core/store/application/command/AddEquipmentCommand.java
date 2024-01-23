@@ -1,7 +1,7 @@
 package com.krawart.hexademo.core.store.application.command;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 public record AddEquipmentCommand(
     @NotBlank String name,

@@ -2,10 +2,10 @@ package com.krawart.hexademo.core.schedule.infrastructure.persistence.jpa;
 
 import com.krawart.hexademo.core.schedule.domain.Visit;
 import com.krawart.hexademo.core.schedule.domain.VisitRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.Optional;
 import java.util.UUID;
 

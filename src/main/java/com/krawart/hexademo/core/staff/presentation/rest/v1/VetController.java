@@ -5,11 +5,11 @@ import com.krawart.hexademo.core.staff.application.VetQueryService;
 import com.krawart.hexademo.core.staff.application.command.AddVetCommand;
 import com.krawart.hexademo.core.staff.application.command.UpdateVetCommand;
 import com.krawart.hexademo.core.staff.presentation.rest.v1.dto.VetDTO;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.util.UUID;
 

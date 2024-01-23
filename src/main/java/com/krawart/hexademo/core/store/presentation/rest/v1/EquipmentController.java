@@ -5,11 +5,11 @@ import com.krawart.hexademo.core.store.application.EquipmentQueryService;
 import com.krawart.hexademo.core.store.application.command.AddEquipmentCommand;
 import com.krawart.hexademo.core.store.application.command.UpdateEquipmentCommand;
 import com.krawart.hexademo.core.store.presentation.rest.v1.dto.EquipmentDTO;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.util.UUID;
 

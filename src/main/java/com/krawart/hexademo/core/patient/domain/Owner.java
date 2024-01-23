@@ -2,10 +2,10 @@ package com.krawart.hexademo.core.patient.domain;
 
 import com.krawart.hexademo.shared.domain.AggregateRoot;
 import com.krawart.hexademo.shared.domain.value.Email;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.*;
 import java.util.Set;
 
 @Entity

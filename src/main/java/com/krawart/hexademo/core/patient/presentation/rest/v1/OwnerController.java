@@ -5,11 +5,11 @@ import com.krawart.hexademo.core.patient.application.OwnerQueryService;
 import com.krawart.hexademo.core.patient.application.command.AddOwnerCommand;
 import com.krawart.hexademo.core.patient.application.command.UpdateOwnerCommand;
 import com.krawart.hexademo.core.patient.presentation.rest.v1.dto.OwnerDTO;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.util.UUID;
 

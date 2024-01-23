@@ -7,5 +7,5 @@ import java.io.Serializable;
  * It is often designed as a generic interface with the ID type as a generic parameter.
  */
 public interface IdentifiableDomainObject<ID extends Serializable> extends DomainObject {
-    ID getId();
+  ID getId();
 }

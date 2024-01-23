@@ -1,6 +1,7 @@
 package com.krawart.hexademo.shared.domain;
 
 import com.krawart.hexademo.common.domain.Entity;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,7 +9,6 @@ import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.*;
 import java.io.Serial;
 import java.util.UUID;
 

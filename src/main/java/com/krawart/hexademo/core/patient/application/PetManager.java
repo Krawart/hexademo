@@ -6,10 +6,10 @@ import com.krawart.hexademo.core.patient.application.command.UpdatePetCommand;
 import com.krawart.hexademo.core.patient.domain.OwnerRepository;
 import com.krawart.hexademo.core.patient.domain.Pet;
 import com.krawart.hexademo.core.patient.domain.PetRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.UUID;
 
 @ApplicationService

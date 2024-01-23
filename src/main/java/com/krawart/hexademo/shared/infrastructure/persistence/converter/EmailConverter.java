@@ -1,9 +1,8 @@
 package com.krawart.hexademo.shared.infrastructure.persistence.converter;
 
 import com.krawart.hexademo.shared.domain.value.Email;
-
-import javax.persistence.AttributeConverter;
-import javax.persistence.Converter;
+import jakarta.persistence.AttributeConverter;
+import jakarta.persistence.Converter;
 
 @Converter(autoApply = true)
 @SuppressWarnings("unused")

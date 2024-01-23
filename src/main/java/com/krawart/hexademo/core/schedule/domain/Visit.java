@@ -2,12 +2,12 @@ package com.krawart.hexademo.core.schedule.domain;
 
 import com.krawart.hexademo.core.patient.domain.Pet;
 import com.krawart.hexademo.shared.domain.AggregateRoot;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import java.time.Instant;
 
 @Entity

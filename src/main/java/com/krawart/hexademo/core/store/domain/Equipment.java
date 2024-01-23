@@ -2,11 +2,10 @@ package com.krawart.hexademo.core.store.domain;
 
 
 import com.krawart.hexademo.shared.domain.AggregateRoot;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
 
 @Entity
 @SuperBuilder

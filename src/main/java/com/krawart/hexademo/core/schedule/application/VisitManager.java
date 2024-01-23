@@ -6,10 +6,10 @@ import com.krawart.hexademo.core.schedule.application.command.AddVisitCommand;
 import com.krawart.hexademo.core.schedule.application.command.UpdateVisitCommand;
 import com.krawart.hexademo.core.schedule.domain.Visit;
 import com.krawart.hexademo.core.schedule.domain.VisitRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.UUID;
 
 @ApplicationService

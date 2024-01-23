@@ -1,10 +1,10 @@
 package com.krawart.hexademo.core.store.domain;
 
 import com.krawart.hexademo.shared.domain.AggregateRoot;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 

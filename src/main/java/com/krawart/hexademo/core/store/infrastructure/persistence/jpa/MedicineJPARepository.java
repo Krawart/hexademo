@@ -2,10 +2,10 @@ package com.krawart.hexademo.core.store.infrastructure.persistence.jpa;
 
 import com.krawart.hexademo.core.store.domain.Medicine;
 import com.krawart.hexademo.core.store.domain.MedicineRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.Optional;
 import java.util.UUID;
 

@@ -2,10 +2,10 @@ package com.krawart.hexademo.core.patient.domain;
 
 import com.krawart.hexademo.core.schedule.domain.Visit;
 import com.krawart.hexademo.shared.domain.AggregateRoot;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.*;
 import java.time.Instant;
 import java.util.LinkedHashSet;
 import java.util.Set;

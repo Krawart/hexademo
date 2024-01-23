@@ -2,10 +2,10 @@ package com.krawart.hexademo.core.staff.infrastructure.persistence.jpa;
 
 import com.krawart.hexademo.core.staff.domain.Vet;
 import com.krawart.hexademo.core.staff.domain.VetRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.Optional;
 import java.util.UUID;
 

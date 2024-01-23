@@ -5,11 +5,11 @@ import com.krawart.hexademo.core.store.application.OrderQueryService;
 import com.krawart.hexademo.core.store.application.command.AddOrderCommand;
 import com.krawart.hexademo.core.store.application.command.UpdateOrderCommand;
 import com.krawart.hexademo.core.store.presentation.rest.v1.dto.OrderDTO;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.util.UUID;
 

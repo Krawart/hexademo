@@ -5,11 +5,11 @@ import com.krawart.hexademo.core.schedule.application.VisitQueryService;
 import com.krawart.hexademo.core.schedule.application.command.AddVisitCommand;
 import com.krawart.hexademo.core.schedule.application.command.UpdateVisitCommand;
 import com.krawart.hexademo.core.schedule.presentation.rest.v1.dto.VisitDTO;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.util.UUID;
 

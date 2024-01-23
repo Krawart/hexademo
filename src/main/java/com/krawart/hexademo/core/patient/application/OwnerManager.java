@@ -6,10 +6,10 @@ import com.krawart.hexademo.core.patient.application.command.UpdateOwnerCommand;
 import com.krawart.hexademo.core.patient.domain.Owner;
 import com.krawart.hexademo.core.patient.domain.OwnerRepository;
 import com.krawart.hexademo.shared.domain.value.Email;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.UUID;
 
 @ApplicationService

@@ -6,10 +6,10 @@ import com.krawart.hexademo.core.store.application.command.UpdateOrderCommand;
 import com.krawart.hexademo.core.store.domain.MedicineRepository;
 import com.krawart.hexademo.core.store.domain.Order;
 import com.krawart.hexademo.core.store.domain.OrderRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;

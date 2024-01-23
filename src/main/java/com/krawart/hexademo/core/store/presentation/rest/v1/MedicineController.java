@@ -5,11 +5,11 @@ import com.krawart.hexademo.core.store.application.MedicineQueryService;
 import com.krawart.hexademo.core.store.application.command.AddMedicineCommand;
 import com.krawart.hexademo.core.store.application.command.UpdateMedicineCommand;
 import com.krawart.hexademo.core.store.presentation.rest.v1.dto.MedicineDTO;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.util.UUID;
 
