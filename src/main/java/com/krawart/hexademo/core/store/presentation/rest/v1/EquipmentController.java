@@ -18,30 +18,32 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class EquipmentController {
 
-  private final EquipmentManager equipmentManager;
-  private final EquipmentQueryService equipmentQueryService;
+    private final EquipmentManager equipmentManager;
+    private final EquipmentQueryService equipmentQueryService;
 
-  @PostMapping
-  ResponseEntity<EquipmentDTO> addEquipment(@RequestBody @Valid AddEquipmentCommand command) {
-    var result = equipmentManager.add(command);
-    return ResponseEntity.created(URI.create("/api/v1/equipments/" + result.getId())).build();
-  }
+    @PostMapping
+    ResponseEntity<EquipmentDTO> addEquipment(@RequestBody @Valid AddEquipmentCommand command) {
+        var result = equipmentManager.add(command);
+        return ResponseEntity.created(URI.create("/api/v1/equipments/" + result.getId()))
+                .build();
+    }
 
-  @PutMapping("/{id}")
-  ResponseEntity<EquipmentDTO> updateEquipment(@RequestBody @Valid UpdateEquipmentCommand command, @PathVariable UUID id) {
-    var result = equipmentManager.update(command, id);
-    return ResponseEntity.ok(EquipmentDTO.of(result));
-  }
+    @PutMapping("/{id}")
+    ResponseEntity<EquipmentDTO> updateEquipment(
+            @RequestBody @Valid UpdateEquipmentCommand command, @PathVariable UUID id) {
+        var result = equipmentManager.update(command, id);
+        return ResponseEntity.ok(EquipmentDTO.of(result));
+    }
 
-  @GetMapping("/{id}")
-  ResponseEntity<EquipmentDTO> getEquipment(@PathVariable UUID id) {
-    var result = equipmentQueryService.getById(id);
-    return ResponseEntity.ok(EquipmentDTO.of(result));
-  }
+    @GetMapping("/{id}")
+    ResponseEntity<EquipmentDTO> getEquipment(@PathVariable UUID id) {
+        var result = equipmentQueryService.getById(id);
+        return ResponseEntity.ok(EquipmentDTO.of(result));
+    }
 
-  @DeleteMapping("/{id}")
-  ResponseEntity<Void> deleteEquipment(@PathVariable UUID id) {
-    equipmentManager.deleteById(id);
-    return ResponseEntity.noContent().build();
-  }
+    @DeleteMapping("/{id}")
+    ResponseEntity<Void> deleteEquipment(@PathVariable UUID id) {
+        equipmentManager.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }

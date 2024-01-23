@@ -12,10 +12,9 @@ import java.util.UUID;
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class PetQueryService {
-  private final PetRepository petRepository;
+    private final PetRepository petRepository;
 
-  public Pet getById(UUID id) {
-    return petRepository.getById(id);
-  }
-
+    public Pet getById(UUID id) {
+        return petRepository.getById(id);
+    }
 }

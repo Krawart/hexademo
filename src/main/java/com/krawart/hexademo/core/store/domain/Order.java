@@ -18,31 +18,31 @@ import java.util.Set;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Order extends AggregateRoot {
 
-  @Column(name = "upc")
-  private String upc;
+    @Column(name = "upc")
+    private String upc;
 
-  @ElementCollection
-  @CollectionTable(name = "order_item", joinColumns = @JoinColumn(name = "order_id"))
-  @ToString.Exclude
-  private Set<OrderItem> items = new HashSet<>();
-
-  @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-  private Shipment shipment;
-
-  @Embeddable
-  @Builder
-  @Getter
-  @Setter
-  @ToString
-  @AllArgsConstructor(access = AccessLevel.PRIVATE)
-  @NoArgsConstructor(access = AccessLevel.PROTECTED)
-  public static class OrderItem {
-
-    @ManyToOne
+    @ElementCollection
+    @CollectionTable(name = "order_item", joinColumns = @JoinColumn(name = "order_id"))
     @ToString.Exclude
-    private Medicine medicine;
+    private Set<OrderItem> items = new HashSet<>();
 
-    @Column(name = "quantity")
-    private Integer quantity;
-  }
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Shipment shipment;
+
+    @Embeddable
+    @Builder
+    @Getter
+    @Setter
+    @ToString
+    @AllArgsConstructor(access = AccessLevel.PRIVATE)
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class OrderItem {
+
+        @ManyToOne
+        @ToString.Exclude
+        private Medicine medicine;
+
+        @Column(name = "quantity")
+        private Integer quantity;
+    }
 }

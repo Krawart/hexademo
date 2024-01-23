@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 class ExceptionResolver {
 
-  @ExceptionHandler
-  public ResponseEntity<String> unhandledError(Exception e) {
-    log.error(e.getMessage());
-    return ResponseEntity.internalServerError().body("Oops... \n" + e.getMessage());
-  }
+    @ExceptionHandler
+    public ResponseEntity<String> unhandledError(Exception e) {
+        log.error(e.getMessage());
+        return ResponseEntity.internalServerError().body("Oops... \n" + e.getMessage());
+    }
 }

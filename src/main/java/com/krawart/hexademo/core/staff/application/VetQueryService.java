@@ -12,10 +12,9 @@ import java.util.UUID;
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class VetQueryService {
-  private final VetRepository vetRepository;
+    private final VetRepository vetRepository;
 
-  public Vet getById(UUID id) {
-    return vetRepository.getById(id);
-  }
-
+    public Vet getById(UUID id) {
+        return vetRepository.getById(id);
+    }
 }

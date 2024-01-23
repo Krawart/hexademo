@@ -7,5 +7,4 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableJpaRepositories({"com.krawart.hexademo"})
 @EnableTransactionManagement
-public class DatabaseConfiguration {
-}
+public class DatabaseConfiguration {}

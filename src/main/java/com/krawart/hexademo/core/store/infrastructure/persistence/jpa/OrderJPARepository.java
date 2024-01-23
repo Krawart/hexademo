@@ -13,30 +13,30 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class OrderJPARepository implements OrderRepository {
 
-  private final OrderDAO medicineDAO;
+    private final OrderDAO medicineDAO;
 
-  @Override
-  public Order add(Order entity) {
-    return medicineDAO.save(entity);
-  }
+    @Override
+    public Order add(Order entity) {
+        return medicineDAO.save(entity);
+    }
 
-  @Override
-  public Order update(Order entity) {
-    return medicineDAO.save(entity);
-  }
+    @Override
+    public Order update(Order entity) {
+        return medicineDAO.save(entity);
+    }
 
-  @Override
-  public Optional<Order> findById(UUID id) {
-    return medicineDAO.findById(id);
-  }
+    @Override
+    public Optional<Order> findById(UUID id) {
+        return medicineDAO.findById(id);
+    }
 
-  @Override
-  public Order getById(UUID id) {
-    return medicineDAO.findById(id).orElseThrow(() -> new EntityNotFoundException("Order not found in database"));
-  }
+    @Override
+    public Order getById(UUID id) {
+        return medicineDAO.findById(id).orElseThrow(() -> new EntityNotFoundException("Order not found in database"));
+    }
 
-  @Override
-  public void removeById(UUID id) {
-    medicineDAO.deleteById(id);
-  }
+    @Override
+    public void removeById(UUID id) {
+        medicineDAO.deleteById(id);
+    }
 }

@@ -13,31 +13,30 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class VetJPARepository implements VetRepository {
 
-  private final VetDAO vetDAO;
+    private final VetDAO vetDAO;
 
-  @Override
-  public Vet add(Vet entity) {
-    return vetDAO.save(entity);
-  }
+    @Override
+    public Vet add(Vet entity) {
+        return vetDAO.save(entity);
+    }
 
-  @Override
-  public Vet update(Vet entity) {
-    return vetDAO.save(entity);
-  }
+    @Override
+    public Vet update(Vet entity) {
+        return vetDAO.save(entity);
+    }
 
-  @Override
-  public Optional<Vet> findById(UUID id) {
-    return vetDAO.findById(id);
-  }
+    @Override
+    public Optional<Vet> findById(UUID id) {
+        return vetDAO.findById(id);
+    }
 
-  @Override
-  public Vet getById(UUID id) {
-    return vetDAO.findById(id).orElseThrow(() -> new EntityNotFoundException("Vet not found in database"));
-  }
+    @Override
+    public Vet getById(UUID id) {
+        return vetDAO.findById(id).orElseThrow(() -> new EntityNotFoundException("Vet not found in database"));
+    }
 
-  @Override
-  public void removeById(UUID id) {
-    vetDAO.deleteById(id);
-  }
+    @Override
+    public void removeById(UUID id) {
+        vetDAO.deleteById(id);
+    }
 }
-

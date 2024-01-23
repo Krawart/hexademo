@@ -8,13 +8,6 @@ import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
-public record UpdateOrderCommand(
-    @NotBlank String upc,
-    @NotEmpty List<@Valid OrderItemDTO> items
-) {
-  public static record OrderItemDTO(
-      @NotNull String medicineId,
-      @NotNull @Min(1) Integer quantity
-  ) {
-  }
+public record UpdateOrderCommand(@NotBlank String upc, @NotEmpty List<@Valid OrderItemDTO> items) {
+    public static record OrderItemDTO(@NotNull String medicineId, @NotNull @Min(1) Integer quantity) {}
 }

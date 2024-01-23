@@ -11,6 +11,6 @@ import java.lang.annotation.*;
 @Component
 public @interface ApplicationFactory {
 
-  @AliasFor(annotation = Component.class)
-  String value() default "";
+    @AliasFor(annotation = Component.class)
+    String value() default "";
 }

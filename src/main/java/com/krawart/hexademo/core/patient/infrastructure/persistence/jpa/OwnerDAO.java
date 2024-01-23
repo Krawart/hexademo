@@ -5,5 +5,4 @@ import com.krawart.hexademo.shared.infrastructure.persistence.HexaDemoJpaReposit
 import org.springframework.stereotype.Component;
 
 @Component
-interface OwnerDAO extends HexaDemoJpaRepository<Owner> {
-}
+interface OwnerDAO extends HexaDemoJpaRepository<Owner> {}

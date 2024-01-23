@@ -12,10 +12,9 @@ import java.util.UUID;
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class EquipmentQueryService {
-  private final EquipmentRepository equipmentRepository;
+    private final EquipmentRepository equipmentRepository;
 
-  public Equipment getById(UUID id) {
-    return equipmentRepository.getById(id);
-  }
-
+    public Equipment getById(UUID id) {
+        return equipmentRepository.getById(id);
+    }
 }

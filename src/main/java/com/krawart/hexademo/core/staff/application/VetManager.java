@@ -15,34 +15,32 @@ import java.util.UUID;
 @Transactional
 @RequiredArgsConstructor
 public class VetManager {
-  private final VetRepository vetRepository;
+    private final VetRepository vetRepository;
 
-  public Vet add(AddVetCommand command) {
-    return vetRepository.add(
-        Vet.builder()
-            .firstName(command.firstName())
-            .lastName(command.lastName())
-            .email(new Email(command.email()))
-            .telephone(command.telephone())
-            .build()
-    );
-  }
-
-  public Vet update(UpdateVetCommand command, UUID id) {
-    var persistedEntity = vetRepository.getById(id);
-
-    var firstCharValue = (int) command.firstName().charAt(0);
-    if (64 < firstCharValue && firstCharValue < 91) {
-      persistedEntity.setFirstName(command.firstName());
+    public Vet add(AddVetCommand command) {
+        return vetRepository.add(Vet.builder()
+                .firstName(command.firstName())
+                .lastName(command.lastName())
+                .email(new Email(command.email()))
+                .telephone(command.telephone())
+                .build());
     }
-    persistedEntity.setLastName(command.lastName());
-    persistedEntity.setEmail(new Email(command.email()));
-    persistedEntity.setTelephone(command.telephone());
 
-    return persistedEntity;
-  }
+    public Vet update(UpdateVetCommand command, UUID id) {
+        var persistedEntity = vetRepository.getById(id);
 
-  public void deleteById(UUID id) {
-    vetRepository.removeById(id);
-  }
+        var firstCharValue = (int) command.firstName().charAt(0);
+        if (64 < firstCharValue && firstCharValue < 91) {
+            persistedEntity.setFirstName(command.firstName());
+        }
+        persistedEntity.setLastName(command.lastName());
+        persistedEntity.setEmail(new Email(command.email()));
+        persistedEntity.setTelephone(command.telephone());
+
+        return persistedEntity;
+    }
+
+    public void deleteById(UUID id) {
+        vetRepository.removeById(id);
+    }
 }

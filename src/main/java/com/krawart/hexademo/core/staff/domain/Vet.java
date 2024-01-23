@@ -16,15 +16,15 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Vet extends AggregateRoot {
 
-  @Column(name = "first_name")
-  private String firstName;
+    @Column(name = "first_name")
+    private String firstName;
 
-  @Column(name = "last_name")
-  private String lastName;
+    @Column(name = "last_name")
+    private String lastName;
 
-  @Column(name = "email")
-  private Email email;
+    @Column(name = "email")
+    private Email email;
 
-  @Column(name = "telephone")
-  private String telephone;
+    @Column(name = "telephone")
+    private String telephone;
 }

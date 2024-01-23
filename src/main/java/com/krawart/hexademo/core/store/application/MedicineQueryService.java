@@ -14,9 +14,9 @@ import java.util.UUID;
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class MedicineQueryService {
-  private final MedicineRepository medicineRepository;
+    private final MedicineRepository medicineRepository;
 
-  public Medicine getById(UUID id) {
-    return medicineRepository.getById(id);
-  }
+    public Medicine getById(UUID id) {
+        return medicineRepository.getById(id);
+    }
 }

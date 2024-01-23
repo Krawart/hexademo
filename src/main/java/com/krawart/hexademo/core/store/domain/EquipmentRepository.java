@@ -2,5 +2,4 @@ package com.krawart.hexademo.core.store.domain;
 
 import com.krawart.hexademo.shared.domain.CRUDDomainRepository;
 
-public interface EquipmentRepository extends CRUDDomainRepository<Equipment> {
-}
+public interface EquipmentRepository extends CRUDDomainRepository<Equipment> {}

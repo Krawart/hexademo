@@ -16,29 +16,28 @@ import java.util.UUID;
 @Transactional
 @RequiredArgsConstructor
 public class OwnerManager {
-  private final OwnerRepository ownerRepository;
+    private final OwnerRepository ownerRepository;
 
-  public Owner add(AddOwnerCommand command) {
-    return ownerRepository.add(
-        Owner.builder()
-            .firstName(command.firstName())
-            .lastName(command.lastName())
-            .email(new Email(command.email()))
-            .build()
-    );
-  }
+    public Owner add(AddOwnerCommand command) {
+        return ownerRepository.add(Owner.builder()
+                .firstName(command.firstName())
+                .lastName(command.lastName())
+                .email(new Email(command.email()))
+                .build());
+    }
 
-  public Owner update(UpdateOwnerCommand command, UUID id) {
-    var persistedEntity = ownerRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Owner not found"));
+    public Owner update(UpdateOwnerCommand command, UUID id) {
+        var persistedEntity =
+                ownerRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Owner not found"));
 
-    persistedEntity.setFirstName(command.firstName());
-    persistedEntity.setLastName(command.lastName());
-    persistedEntity.setEmail(new Email(command.email()));
+        persistedEntity.setFirstName(command.firstName());
+        persistedEntity.setLastName(command.lastName());
+        persistedEntity.setEmail(new Email(command.email()));
 
-    return persistedEntity;
-  }
+        return persistedEntity;
+    }
 
-  public void deleteById(UUID id) {
-    ownerRepository.removeById(id);
-  }
+    public void deleteById(UUID id) {
+        ownerRepository.removeById(id);
+    }
 }

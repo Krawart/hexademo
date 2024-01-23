@@ -19,13 +19,13 @@ import java.time.Instant;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Visit extends AggregateRoot {
 
-  @Column(name = "date")
-  private Instant date;
+    @Column(name = "date")
+    private Instant date;
 
-  @Column(name = "description")
-  private String description;
+    @Column(name = "description")
+    private String description;
 
-  @ManyToOne
-  @ToString.Exclude
-  private Pet pet;
+    @ManyToOne
+    @ToString.Exclude
+    private Pet pet;
 }

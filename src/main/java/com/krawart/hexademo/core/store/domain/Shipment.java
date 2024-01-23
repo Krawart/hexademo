@@ -1,6 +1,5 @@
 package com.krawart.hexademo.core.store.domain;
 
-
 import com.krawart.hexademo.shared.domain.AggregateRoot;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,12 +15,12 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Shipment extends AggregateRoot {
 
-  @Column(name = "name")
-  private String name;
+    @Column(name = "name")
+    private String name;
 
-  @Column(name = "status")
-  private String status;
+    @Column(name = "status")
+    private String status;
 
-  @Column(name = "code")
-  private String code;
+    @Column(name = "code")
+    private String code;
 }

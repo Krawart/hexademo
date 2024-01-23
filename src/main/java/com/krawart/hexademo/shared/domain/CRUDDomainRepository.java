@@ -7,13 +7,13 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface CRUDDomainRepository<T extends Entity<?>> extends DomainObject {
-  T add(T entity);
+    T add(T entity);
 
-  T update(T entity);
+    T update(T entity);
 
-  Optional<T> findById(UUID id);
+    Optional<T> findById(UUID id);
 
-  T getById(UUID id);
+    T getById(UUID id);
 
-  void removeById(UUID id);
+    void removeById(UUID id);
 }

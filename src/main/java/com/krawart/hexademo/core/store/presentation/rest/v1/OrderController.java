@@ -18,30 +18,31 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class OrderController {
 
-  private final OrderManager orderManager;
-  private final OrderQueryService orderQueryService;
+    private final OrderManager orderManager;
+    private final OrderQueryService orderQueryService;
 
-  @PostMapping
-  ResponseEntity<OrderDTO> addOrder(@RequestBody @Valid AddOrderCommand command) {
-    var result = orderManager.add(command);
-    return ResponseEntity.created(URI.create("/api/v1/orders/" + result.getId())).build();
-  }
+    @PostMapping
+    ResponseEntity<OrderDTO> addOrder(@RequestBody @Valid AddOrderCommand command) {
+        var result = orderManager.add(command);
+        return ResponseEntity.created(URI.create("/api/v1/orders/" + result.getId()))
+                .build();
+    }
 
-  @PutMapping("/{id}")
-  ResponseEntity<OrderDTO> updateOrder(@RequestBody @Valid UpdateOrderCommand command, @PathVariable UUID id) {
-    var result = orderManager.update(command, id);
-    return ResponseEntity.ok(OrderDTO.of(result));
-  }
+    @PutMapping("/{id}")
+    ResponseEntity<OrderDTO> updateOrder(@RequestBody @Valid UpdateOrderCommand command, @PathVariable UUID id) {
+        var result = orderManager.update(command, id);
+        return ResponseEntity.ok(OrderDTO.of(result));
+    }
 
-  @GetMapping("/{id}")
-  ResponseEntity<OrderDTO> getOrder(@PathVariable UUID id) {
-    var result = orderQueryService.getById(id);
-    return ResponseEntity.ok(OrderDTO.of(result));
-  }
+    @GetMapping("/{id}")
+    ResponseEntity<OrderDTO> getOrder(@PathVariable UUID id) {
+        var result = orderQueryService.getById(id);
+        return ResponseEntity.ok(OrderDTO.of(result));
+    }
 
-  @DeleteMapping("/{id}")
-  ResponseEntity<Void> deleteOrder(@PathVariable UUID id) {
-    orderManager.deleteById(id);
-    return ResponseEntity.noContent().build();
-  }
+    @DeleteMapping("/{id}")
+    ResponseEntity<Void> deleteOrder(@PathVariable UUID id) {
+        orderManager.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }

@@ -14,5 +14,4 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Immutable
-public @interface ValueObject {
-}
+public @interface ValueObject {}

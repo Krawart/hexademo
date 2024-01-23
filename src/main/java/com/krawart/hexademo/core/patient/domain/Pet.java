@@ -19,18 +19,18 @@ import java.util.Set;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Pet extends AggregateRoot {
 
-  @Column(name = "name")
-  private String name;
+    @Column(name = "name")
+    private String name;
 
-  @Column(name = "birth_date")
-  private Instant birthDate;
+    @Column(name = "birth_date")
+    private Instant birthDate;
 
-  @ManyToOne
-  @JoinColumn(name = "owner_id")
-  private Owner owner;
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private Owner owner;
 
-  @Transient
-  @ToString.Exclude
-  @Builder.Default
-  private Set<Visit> visits = new LinkedHashSet<>();
+    @Transient
+    @ToString.Exclude
+    @Builder.Default
+    private Set<Visit> visits = new LinkedHashSet<>();
 }

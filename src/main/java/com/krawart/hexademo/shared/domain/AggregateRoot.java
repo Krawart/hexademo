@@ -26,13 +26,13 @@ import java.time.Instant;
 @EntityListeners(AuditingEntityListener.class)
 public abstract class AggregateRoot extends BaseEntity {
 
-  @CreatedDate
-  @Column(name = "created_date", updatable = false)
-  @JsonIgnore
-  private Instant createdDate;
+    @CreatedDate
+    @Column(name = "created_date", updatable = false)
+    @JsonIgnore
+    private Instant createdDate;
 
-  @LastModifiedBy
-  @Column(name = "last_modified_by", length = 50)
-  @JsonIgnore
-  private String lastModifiedBy;
+    @LastModifiedBy
+    @Column(name = "last_modified_by", length = 50)
+    @JsonIgnore
+    private String lastModifiedBy;
 }

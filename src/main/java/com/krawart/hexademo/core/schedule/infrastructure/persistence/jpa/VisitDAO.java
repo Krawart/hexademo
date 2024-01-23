@@ -5,5 +5,4 @@ import com.krawart.hexademo.shared.infrastructure.persistence.HexaDemoJpaReposit
 import org.springframework.stereotype.Component;
 
 @Component
-interface VisitDAO extends HexaDemoJpaRepository<Visit> {
-}
+interface VisitDAO extends HexaDemoJpaRepository<Visit> {}

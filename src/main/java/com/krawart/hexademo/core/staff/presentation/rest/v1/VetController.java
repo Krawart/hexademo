@@ -18,30 +18,31 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class VetController {
 
-  private final VetManager vetManager;
-  private final VetQueryService vetQueryService;
+    private final VetManager vetManager;
+    private final VetQueryService vetQueryService;
 
-  @PostMapping
-  ResponseEntity<VetDTO> addVet(@RequestBody @Valid AddVetCommand command) {
-    var result = vetManager.add(command);
-    return ResponseEntity.created(URI.create("/api/v1/vets/" + result.getId())).build();
-  }
+    @PostMapping
+    ResponseEntity<VetDTO> addVet(@RequestBody @Valid AddVetCommand command) {
+        var result = vetManager.add(command);
+        return ResponseEntity.created(URI.create("/api/v1/vets/" + result.getId()))
+                .build();
+    }
 
-  @PutMapping("/{id}")
-  ResponseEntity<VetDTO> updateVet(@RequestBody @Valid UpdateVetCommand command, @PathVariable UUID id) {
-    var result = vetManager.update(command, id);
-    return ResponseEntity.ok(VetDTO.of(result));
-  }
+    @PutMapping("/{id}")
+    ResponseEntity<VetDTO> updateVet(@RequestBody @Valid UpdateVetCommand command, @PathVariable UUID id) {
+        var result = vetManager.update(command, id);
+        return ResponseEntity.ok(VetDTO.of(result));
+    }
 
-  @GetMapping("/{id}")
-  ResponseEntity<VetDTO> getVet(@PathVariable UUID id) {
-    var result = vetQueryService.getById(id);
-    return ResponseEntity.ok(VetDTO.of(result));
-  }
+    @GetMapping("/{id}")
+    ResponseEntity<VetDTO> getVet(@PathVariable UUID id) {
+        var result = vetQueryService.getById(id);
+        return ResponseEntity.ok(VetDTO.of(result));
+    }
 
-  @DeleteMapping("/{id}")
-  ResponseEntity<Void> deleteVet(@PathVariable UUID id) {
-    vetManager.deleteById(id);
-    return ResponseEntity.noContent().build();
-  }
+    @DeleteMapping("/{id}")
+    ResponseEntity<Void> deleteVet(@PathVariable UUID id) {
+        vetManager.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }

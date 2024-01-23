@@ -5,5 +5,4 @@ import com.krawart.hexademo.shared.infrastructure.persistence.HexaDemoJpaReposit
 import org.springframework.stereotype.Component;
 
 @Component
-interface EquipmentDAO extends HexaDemoJpaRepository<Equipment> {
-}
+interface EquipmentDAO extends HexaDemoJpaRepository<Equipment> {}

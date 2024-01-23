@@ -12,9 +12,9 @@ import java.util.UUID;
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class OrderQueryService {
-  private final OrderRepository orderRepository;
+    private final OrderRepository orderRepository;
 
-  public Order getById(UUID id) {
-    return orderRepository.getById(id);
-  }
+    public Order getById(UUID id) {
+        return orderRepository.getById(id);
+    }
 }

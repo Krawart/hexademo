@@ -12,9 +12,9 @@ import java.util.UUID;
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class OwnerQueryService {
-  private final OwnerRepository ownerRepository;
+    private final OwnerRepository ownerRepository;
 
-  public Owner getById(UUID id) {
-    return ownerRepository.getById(id);
-  }
+    public Owner getById(UUID id) {
+        return ownerRepository.getById(id);
+    }
 }

@@ -14,27 +14,23 @@ import java.util.UUID;
 @Transactional
 @RequiredArgsConstructor
 public class MedicineManager {
-  private final MedicineRepository medicineRepository;
+    private final MedicineRepository medicineRepository;
 
-  public Medicine add(AddMedicineCommand command) {
-    return medicineRepository.add(
-        Medicine.builder()
-            .name(command.name())
-            .weight(command.weight())
-            .build()
-    );
-  }
+    public Medicine add(AddMedicineCommand command) {
+        return medicineRepository.add(
+                Medicine.builder().name(command.name()).weight(command.weight()).build());
+    }
 
-  public Medicine update(UpdateMedicineCommand command, UUID id) {
-    var persistedEntity = medicineRepository.getById(id);
+    public Medicine update(UpdateMedicineCommand command, UUID id) {
+        var persistedEntity = medicineRepository.getById(id);
 
-    persistedEntity.setName(command.name());
-    persistedEntity.setWeight(command.weight());
+        persistedEntity.setName(command.name());
+        persistedEntity.setWeight(command.weight());
 
-    return persistedEntity;
-  }
+        return persistedEntity;
+    }
 
-  public void deleteById(UUID id) {
-    medicineRepository.removeById(id);
-  }
+    public void deleteById(UUID id) {
+        medicineRepository.removeById(id);
+    }
 }

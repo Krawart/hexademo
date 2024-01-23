@@ -13,30 +13,30 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class OwnerJPARepository implements OwnerRepository {
 
-  private final OwnerDAO ownerDAO;
+    private final OwnerDAO ownerDAO;
 
-  @Override
-  public Owner add(Owner entity) {
-    return ownerDAO.save(entity);
-  }
+    @Override
+    public Owner add(Owner entity) {
+        return ownerDAO.save(entity);
+    }
 
-  @Override
-  public Owner update(Owner entity) {
-    return ownerDAO.save(entity);
-  }
+    @Override
+    public Owner update(Owner entity) {
+        return ownerDAO.save(entity);
+    }
 
-  @Override
-  public Optional<Owner> findById(UUID id) {
-    return ownerDAO.findById(id);
-  }
+    @Override
+    public Optional<Owner> findById(UUID id) {
+        return ownerDAO.findById(id);
+    }
 
-  @Override
-  public Owner getById(UUID id) {
-    return ownerDAO.findById(id).orElseThrow(() -> new EntityNotFoundException("Owner not found in database"));
-  }
+    @Override
+    public Owner getById(UUID id) {
+        return ownerDAO.findById(id).orElseThrow(() -> new EntityNotFoundException("Owner not found in database"));
+    }
 
-  @Override
-  public void removeById(UUID id) {
-    ownerDAO.deleteById(id);
-  }
+    @Override
+    public void removeById(UUID id) {
+        ownerDAO.deleteById(id);
+    }
 }

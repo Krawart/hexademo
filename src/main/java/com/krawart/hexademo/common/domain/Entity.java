@@ -8,5 +8,4 @@ import java.io.Serializable;
  *
  * @param <ID> Identifier type
  */
-public interface Entity<ID extends Serializable> extends IdentifiableDomainObject<ID> {
-}
+public interface Entity<ID extends Serializable> extends IdentifiableDomainObject<ID> {}

@@ -13,30 +13,30 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class PetJPARepository implements PetRepository {
 
-  private final PetDAO petDAO;
+    private final PetDAO petDAO;
 
-  @Override
-  public Pet add(Pet entity) {
-    return petDAO.save(entity);
-  }
+    @Override
+    public Pet add(Pet entity) {
+        return petDAO.save(entity);
+    }
 
-  @Override
-  public Pet update(Pet entity) {
-    return petDAO.save(entity);
-  }
+    @Override
+    public Pet update(Pet entity) {
+        return petDAO.save(entity);
+    }
 
-  @Override
-  public Optional<Pet> findById(UUID id) {
-    return petDAO.findById(id);
-  }
+    @Override
+    public Optional<Pet> findById(UUID id) {
+        return petDAO.findById(id);
+    }
 
-  @Override
-  public Pet getById(UUID id) {
-    return petDAO.findById(id).orElseThrow(() -> new EntityNotFoundException("Pet not found in database"));
-  }
+    @Override
+    public Pet getById(UUID id) {
+        return petDAO.findById(id).orElseThrow(() -> new EntityNotFoundException("Pet not found in database"));
+    }
 
-  @Override
-  public void removeById(UUID id) {
-    petDAO.deleteById(id);
-  }
+    @Override
+    public void removeById(UUID id) {
+        petDAO.deleteById(id);
+    }
 }

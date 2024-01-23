@@ -14,27 +14,25 @@ import java.util.UUID;
 @Transactional
 @RequiredArgsConstructor
 public class EquipmentManager {
-  private final EquipmentRepository equipmentRepository;
+    private final EquipmentRepository equipmentRepository;
 
-  public Equipment add(AddEquipmentCommand command) {
-    return equipmentRepository.add(
-        Equipment.builder()
-            .name(command.name())
-            .quantity(command.quantity())
-            .build()
-    );
-  }
+    public Equipment add(AddEquipmentCommand command) {
+        return equipmentRepository.add(Equipment.builder()
+                .name(command.name())
+                .quantity(command.quantity())
+                .build());
+    }
 
-  public Equipment update(UpdateEquipmentCommand command, UUID id) {
-    var persistedEntity = equipmentRepository.getById(id);
+    public Equipment update(UpdateEquipmentCommand command, UUID id) {
+        var persistedEntity = equipmentRepository.getById(id);
 
-    persistedEntity.setName(command.name());
-    persistedEntity.setQuantity(command.quantity());
+        persistedEntity.setName(command.name());
+        persistedEntity.setQuantity(command.quantity());
 
-    return persistedEntity;
-  }
+        return persistedEntity;
+    }
 
-  public void deleteById(UUID id) {
-    equipmentRepository.removeById(id);
-  }
+    public void deleteById(UUID id) {
+        equipmentRepository.removeById(id);
+    }
 }

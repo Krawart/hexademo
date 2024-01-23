@@ -12,10 +12,9 @@ import java.util.UUID;
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class VisitQueryService {
-  private final VisitRepository visitRepository;
+    private final VisitRepository visitRepository;
 
-  public Visit getById(UUID id) {
-    return visitRepository.getById(id);
-  }
-
+    public Visit getById(UUID id) {
+        return visitRepository.getById(id);
+    }
 }

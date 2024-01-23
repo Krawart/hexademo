@@ -15,6 +15,6 @@ import java.lang.annotation.*;
 @Component
 public @interface DomainFactory {
 
-  @AliasFor(annotation = Component.class)
-  String value() default "";
+    @AliasFor(annotation = Component.class)
+    String value() default "";
 }

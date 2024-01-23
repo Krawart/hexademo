@@ -5,5 +5,4 @@ import com.krawart.hexademo.shared.infrastructure.persistence.HexaDemoJpaReposit
 import org.springframework.stereotype.Component;
 
 @Component
-interface PetDAO extends HexaDemoJpaRepository<Pet> {
-}
+interface PetDAO extends HexaDemoJpaRepository<Pet> {}

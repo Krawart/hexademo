@@ -16,30 +16,29 @@ import java.util.UUID;
 @Transactional
 @RequiredArgsConstructor
 public class VisitManager {
-  private final VisitRepository visitRepository;
-  private final PetRepository petRepository;
+    private final VisitRepository visitRepository;
+    private final PetRepository petRepository;
 
-  public Visit add(AddVisitCommand command) {
-    return visitRepository.add(
-        Visit.builder()
-            .date(command.date())
-            .description(command.description())
-            .pet(petRepository.getById(UUID.fromString(command.petId())))
-            .build()
-    );
-  }
+    public Visit add(AddVisitCommand command) {
+        return visitRepository.add(Visit.builder()
+                .date(command.date())
+                .description(command.description())
+                .pet(petRepository.getById(UUID.fromString(command.petId())))
+                .build());
+    }
 
-  public Visit update(UpdateVisitCommand command, UUID id) {
-    var persistedEntity = visitRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Visit not found"));
+    public Visit update(UpdateVisitCommand command, UUID id) {
+        var persistedEntity =
+                visitRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Visit not found"));
 
-    persistedEntity.setDate(command.date());
-    persistedEntity.setDescription(command.description());
-    persistedEntity.setPet(petRepository.getById(UUID.fromString(command.petId())));
+        persistedEntity.setDate(command.date());
+        persistedEntity.setDescription(command.description());
+        persistedEntity.setPet(petRepository.getById(UUID.fromString(command.petId())));
 
-    return persistedEntity;
-  }
+        return persistedEntity;
+    }
 
-  public void deleteById(UUID id) {
-    visitRepository.removeById(id);
-  }
+    public void deleteById(UUID id) {
+        visitRepository.removeById(id);
+    }
 }

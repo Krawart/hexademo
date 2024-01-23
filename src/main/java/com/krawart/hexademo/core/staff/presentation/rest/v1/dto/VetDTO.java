@@ -4,22 +4,14 @@ import com.krawart.hexademo.core.staff.domain.Vet;
 import lombok.Builder;
 
 @Builder
-public record VetDTO(
-    String id,
-    String firstName,
-    String lastName,
-    String email,
-    String telephone
-) {
+public record VetDTO(String id, String firstName, String lastName, String email, String telephone) {
 
-  public static VetDTO of(Vet entity) {
-    return new VetDTO(
-        entity.getId().toString(),
-        entity.getFirstName(),
-        entity.getLastName(),
-        entity.getEmail().email(),
-        entity.getTelephone()
-    );
-  }
-
+    public static VetDTO of(Vet entity) {
+        return new VetDTO(
+                entity.getId().toString(),
+                entity.getFirstName(),
+                entity.getLastName(),
+                entity.getEmail().email(),
+                entity.getTelephone());
+    }
 }

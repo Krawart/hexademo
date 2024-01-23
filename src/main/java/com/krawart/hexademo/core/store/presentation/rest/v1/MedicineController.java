@@ -18,30 +18,32 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class MedicineController {
 
-  private final MedicineManager medicineManager;
-  private final MedicineQueryService medicineQueryService;
+    private final MedicineManager medicineManager;
+    private final MedicineQueryService medicineQueryService;
 
-  @PostMapping
-  ResponseEntity<MedicineDTO> addMedicine(@RequestBody @Valid AddMedicineCommand command) {
-    var result = medicineManager.add(command);
-    return ResponseEntity.created(URI.create("/api/v1/medicines/" + result.getId())).build();
-  }
+    @PostMapping
+    ResponseEntity<MedicineDTO> addMedicine(@RequestBody @Valid AddMedicineCommand command) {
+        var result = medicineManager.add(command);
+        return ResponseEntity.created(URI.create("/api/v1/medicines/" + result.getId()))
+                .build();
+    }
 
-  @PutMapping("/{id}")
-  ResponseEntity<MedicineDTO> updateMedicine(@RequestBody @Valid UpdateMedicineCommand command, @PathVariable UUID id) {
-    var result = medicineManager.update(command, id);
-    return ResponseEntity.ok(MedicineDTO.of(result));
-  }
+    @PutMapping("/{id}")
+    ResponseEntity<MedicineDTO> updateMedicine(
+            @RequestBody @Valid UpdateMedicineCommand command, @PathVariable UUID id) {
+        var result = medicineManager.update(command, id);
+        return ResponseEntity.ok(MedicineDTO.of(result));
+    }
 
-  @GetMapping("/{id}")
-  ResponseEntity<MedicineDTO> getMedicine(@PathVariable UUID id) {
-    var result = medicineQueryService.getById(id);
-    return ResponseEntity.ok(MedicineDTO.of(result));
-  }
+    @GetMapping("/{id}")
+    ResponseEntity<MedicineDTO> getMedicine(@PathVariable UUID id) {
+        var result = medicineQueryService.getById(id);
+        return ResponseEntity.ok(MedicineDTO.of(result));
+    }
 
-  @DeleteMapping("/{id}")
-  ResponseEntity<Void> deleteMedicine(@PathVariable UUID id) {
-    medicineManager.deleteById(id);
-    return ResponseEntity.noContent().build();
-  }
+    @DeleteMapping("/{id}")
+    ResponseEntity<Void> deleteMedicine(@PathVariable UUID id) {
+        medicineManager.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }

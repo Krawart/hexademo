@@ -5,5 +5,4 @@ import com.krawart.hexademo.shared.infrastructure.persistence.HexaDemoJpaReposit
 import org.springframework.stereotype.Component;
 
 @Component
-interface OrderDAO extends HexaDemoJpaRepository<Order> {
-}
+interface OrderDAO extends HexaDemoJpaRepository<Order> {}

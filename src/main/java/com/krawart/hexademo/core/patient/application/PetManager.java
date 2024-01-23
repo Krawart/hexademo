@@ -16,30 +16,29 @@ import java.util.UUID;
 @Transactional
 @RequiredArgsConstructor
 public class PetManager {
-  private final OwnerRepository ownerRepository;
-  private final PetRepository petRepository;
+    private final OwnerRepository ownerRepository;
+    private final PetRepository petRepository;
 
-  public Pet add(AddPetCommand command) {
-    return petRepository.add(
-        Pet.builder()
-            .birthDate(command.birthDate())
-            .name(command.name())
-            .owner(ownerRepository.getById(UUID.fromString(command.ownerId())))
-            .build()
-    );
-  }
+    public Pet add(AddPetCommand command) {
+        return petRepository.add(Pet.builder()
+                .birthDate(command.birthDate())
+                .name(command.name())
+                .owner(ownerRepository.getById(UUID.fromString(command.ownerId())))
+                .build());
+    }
 
-  public Pet update(UpdatePetCommand command, UUID id) {
-    var persistedEntity = petRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Pet not found"));
+    public Pet update(UpdatePetCommand command, UUID id) {
+        var persistedEntity =
+                petRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Pet not found"));
 
-    persistedEntity.setBirthDate(command.birthDate());
-    persistedEntity.setName(command.name());
-    persistedEntity.setOwner(ownerRepository.getById(UUID.fromString(command.ownerId())));
+        persistedEntity.setBirthDate(command.birthDate());
+        persistedEntity.setName(command.name());
+        persistedEntity.setOwner(ownerRepository.getById(UUID.fromString(command.ownerId())));
 
-    return persistedEntity;
-  }
+        return persistedEntity;
+    }
 
-  public void deleteById(UUID id) {
-    petRepository.removeById(id);
-  }
+    public void deleteById(UUID id) {
+        petRepository.removeById(id);
+    }
 }

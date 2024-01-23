@@ -13,30 +13,30 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class VisitJPARepository implements VisitRepository {
 
-  private final VisitDAO visitDAO;
+    private final VisitDAO visitDAO;
 
-  @Override
-  public Visit add(Visit entity) {
-    return visitDAO.save(entity);
-  }
+    @Override
+    public Visit add(Visit entity) {
+        return visitDAO.save(entity);
+    }
 
-  @Override
-  public Visit update(Visit entity) {
-    return visitDAO.save(entity);
-  }
+    @Override
+    public Visit update(Visit entity) {
+        return visitDAO.save(entity);
+    }
 
-  @Override
-  public Optional<Visit> findById(UUID id) {
-    return visitDAO.findById(id);
-  }
+    @Override
+    public Optional<Visit> findById(UUID id) {
+        return visitDAO.findById(id);
+    }
 
-  @Override
-  public Visit getById(UUID id) {
-    return visitDAO.findById(id).orElseThrow(() -> new EntityNotFoundException("Visit not found in database"));
-  }
+    @Override
+    public Visit getById(UUID id) {
+        return visitDAO.findById(id).orElseThrow(() -> new EntityNotFoundException("Visit not found in database"));
+    }
 
-  @Override
-  public void removeById(UUID id) {
-    visitDAO.deleteById(id);
-  }
+    @Override
+    public void removeById(UUID id) {
+        visitDAO.deleteById(id);
+    }
 }

@@ -13,30 +13,32 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class EquipmentJPARepository implements EquipmentRepository {
 
-  private final EquipmentDAO equipmentDAO;
+    private final EquipmentDAO equipmentDAO;
 
-  @Override
-  public Equipment add(Equipment entity) {
-    return equipmentDAO.save(entity);
-  }
+    @Override
+    public Equipment add(Equipment entity) {
+        return equipmentDAO.save(entity);
+    }
 
-  @Override
-  public Equipment update(Equipment entity) {
-    return equipmentDAO.save(entity);
-  }
+    @Override
+    public Equipment update(Equipment entity) {
+        return equipmentDAO.save(entity);
+    }
 
-  @Override
-  public Optional<Equipment> findById(UUID id) {
-    return equipmentDAO.findById(id);
-  }
+    @Override
+    public Optional<Equipment> findById(UUID id) {
+        return equipmentDAO.findById(id);
+    }
 
-  @Override
-  public Equipment getById(UUID id) {
-    return equipmentDAO.findById(id).orElseThrow(() -> new EntityNotFoundException("Equipment not found in database"));
-  }
+    @Override
+    public Equipment getById(UUID id) {
+        return equipmentDAO
+                .findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Equipment not found in database"));
+    }
 
-  @Override
-  public void removeById(UUID id) {
-    equipmentDAO.deleteById(id);
-  }
+    @Override
+    public void removeById(UUID id) {
+        equipmentDAO.deleteById(id);
+    }
 }

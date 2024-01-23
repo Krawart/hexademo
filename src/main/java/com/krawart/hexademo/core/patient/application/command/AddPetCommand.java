@@ -5,9 +5,4 @@ import jakarta.validation.constraints.PastOrPresent;
 
 import java.time.Instant;
 
-public record AddPetCommand(
-    @PastOrPresent @NotNull Instant birthDate,
-    @NotNull String name,
-    @NotNull String ownerId
-) {
-}
+public record AddPetCommand(@PastOrPresent @NotNull Instant birthDate, @NotNull String name, @NotNull String ownerId) {}
